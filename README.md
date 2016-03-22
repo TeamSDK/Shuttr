@@ -1,2 +1,7 @@
-# explorer
-Angular Application for sharing pictures from geolocations and storing them in your albums
+# Angular-Projects
+
+## Table of Contents
+
+### Explorer
+
+<span class="snapshot"><img src="./images/explorer.png" alt=""></span>

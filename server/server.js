@@ -1,10 +1,14 @@
 var express  = require('express');
-var app      = express();                               // create our app w/ express
+var app      = express();                   // create our app w/ express
 var morgan = require('morgan');             // log requests to the console (express4)
 var bodyParser = require('body-parser');    // pull information from HTML POST (express4)
+var env = require('node-env-file');         //Environment variables for local development
 
+env(__dirname + '/.env');
+var NASA_API_KEY = process.env.NASA_API_KEY
 var port = process.env.PORT || 3000;
-// configuration =================
+
+// Middleware Configuration 
 
 app.use(express.static(__dirname + '/client'));                 // set the static files location /public/img will be /img for users
 app.use(morgan('dev'));                                         // log every request to the console

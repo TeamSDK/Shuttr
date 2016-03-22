@@ -11,7 +11,7 @@ angular.module('SearchServices', [])
   searchPictures.getAllPictures = function(location) {
     return $http({
       method: 'GET',
-      url: 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=' + API_KEY + '&text=' + location + '&format=json&nojsoncallback=1'
+      url: 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=' + API_KEY + '&text=' + location + '&per_page=5&page=1&format=json&nojsoncallback=1'
     })
     .then(function(response) {
       return response;

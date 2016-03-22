@@ -1,4 +1,4 @@
-angular.module('explorer.search', ['SearchServices'])
+angular.module('Shuttr.search', ['SearchServices'])
 
 .controller('SearchController', ['$scope', 'SearchFactory',
  function($scope, SearchFactory) {

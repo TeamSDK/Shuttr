@@ -1,5 +1,5 @@
 describe('Shuttr', function() {
-  beforeEach(module('explorer'));
+  beforeEach(module('Shuttr'));
 
    var $controller, user, $scope, $http, $location, $q, deferred, $httpBackend, createController;
 

@@ -1,4 +1,4 @@
-angular.module('explorer.main', ['MainServices'])
+angular.module('Shuttr.main', ['MainServices'])
 
 .controller('MainController', ['$scope', function($scope) {
   

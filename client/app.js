@@ -1,6 +1,6 @@
-angular.module("explorer", ['ui.router',
-  'explorer.main',
-  'explorer.search',
+angular.module("Shuttr", ['ui.router',
+  'Shuttr.main',
+  'Shuttr.search',
 ])
 
 .config(['$stateProvider','$urlRouterProvider', 

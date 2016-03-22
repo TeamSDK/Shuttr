@@ -1,9 +1,18 @@
 angular.module('explorer.search', ['SearchServices'])
 
-.controller('SearchController', ['$scope', function($scope) {
-  console.log("entering here");
-  $scope.location = {
-    text : 'San Francisco'
+.controller('SearchController', ['$scope', 'SearchFactory',
+ function($scope, SearchFactory) {
+
+  $scope.pictures
+
+  $scope.getPictures = function(location) {
+
+    SearchFactory.getAllPictures(location)
+    .then(function(response) {
+      $scope.pictures = response.data.photos.photo;
+      console.log($scope.pictures);
+    })
+
   }
-  console.log($scope.location.text);
+
 }])

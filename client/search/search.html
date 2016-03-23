@@ -6,9 +6,12 @@
     <button type="submit" class="btn btn-primary">Search</button>
   </form>
 
-  <div ng-repeat="picture in pictures">
+<div class="row">
+  <div class="col-xs-6 col-md-4" ng-repeat="picture in pictures">
     <p> {{ picture.title }} </p>
-    <img style="{width: 100px; height: 100px}" ng-src="https://farm{{ picture.farm }}.staticflickr.com/{{ picture.server }}/{{ picture.id }}_{{ picture.secret }}.jpg" />
+    <img class="picture-list" ng-src="https://farm{{ picture.farm }}.staticflickr.com/{{ picture.server }}/{{ picture.id }}_{{ picture.secret }}.jpg" />
   </div>
+</div>
+
 </div>
   

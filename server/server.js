@@ -21,21 +21,19 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse applica
 //////////////////////////////////////////////////////////////////
 //Set up request in order to avoid CORS issue with flickr
 ///////////////////////////////////////////////////////////////////
-// url: 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=' + API_KEY + '&text=' + location + '&per_page=5&page=1&format=json&nojsoncallback=1'
-// store our twitter key and secret
-var flickr_API_Key = '06252ada83b0736a73b13ad8160e2b37';
+
+var FLICKR_API_KEY = '06252ada83b0736a73b13ad8160e2b37';
 
 app.get('/api/photos/:photoId', function (req, ourResponse, next) {
-  // set options
-  console.log('FROM THE SERVER:', req.params.photoId);
   
+  // set options
   var options = {
     // append the user's handle to the url
-    url: 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=' + flickr_API_Key + '&text=' + req.params.photoId + '&per_page=5&page=1&format=json&nojsoncallback=1'
+    url: 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=' + FLICKR_API_KEY + '&text=' + req.params.photoId + '&per_page=10&page=1&format=json&nojsoncallback=1'
   };
 
   // Send a get request to twitter, notice that the response that we send in the callback is the response from the outer-function passed in through closure.
-  request(options, function (err, responseFromTwitter, body) {
+  request(options, function (err, responseFromFlickr, body) {
     // console.log(JSON.parse(body));
     ourResponse.status(200).send(JSON.parse(body));
   });

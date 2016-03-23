@@ -8,7 +8,7 @@
 
   <div ng-repeat="picture in pictures">
     <p> {{ picture.title }} </p>
-    <img width="400" height="400" src="https://www.flickr.com/photos/{{ picture.owner }}/{{ picture.id}}">
+    <img width="400" height="400" ng-src="https://www.flickr.com/photos/{{ picture.owner }}/{{ picture.id }}">
   </div>
 
 </div>

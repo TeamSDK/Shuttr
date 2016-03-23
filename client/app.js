@@ -1,6 +1,7 @@
 angular.module("Shuttr", ['ui.router',
   'Shuttr.main',
   'Shuttr.search',
+  'Shuttr.login'
 ])
 
 .config(['$stateProvider','$urlRouterProvider', 

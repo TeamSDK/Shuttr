@@ -7,6 +7,8 @@ var request = require('request');
 
 env(__dirname + '/.env');
 var NASA_API_KEY = process.env.NASA_API_KEY
+var FLICKR_API_KEY = process.env.FLICKR_API_KEY
+
 var port = process.env.PORT || 3000;
 
 // Middleware Configuration 
@@ -21,8 +23,6 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse applica
 //////////////////////////////////////////////////////////////////
 //Set up request in order to avoid CORS issue with flickr
 ///////////////////////////////////////////////////////////////////
-
-var FLICKR_API_KEY = '06252ada83b0736a73b13ad8160e2b37';
 
 app.get('/api/photos/:photoId', function (req, ourResponse, next) {
   

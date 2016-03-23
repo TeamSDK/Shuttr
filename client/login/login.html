@@ -1,11 +1,22 @@
-<h2>Contact</h2>
-  <p>Please email support@computersolutions.com</p>
-  <h3>Locations</h3>
-  <div ng-repeat="location in locations">
-    <ul class="location">
-      <li>{{ location.name }}</li>
-      <li>{{ location.street_address }}</li>
-      <li>{{ location.city }} {{location.state }}, {{location.zip }}</li>
-      <li>{{ location.phone }}</li>
-    </ul>
- </div>
+<div>
+	<img class="img-responsive login-image" ng-src={{bgImage}} />
+	<div class="login-wrapper">
+	    <h1 style="font-size: 50px;">Shuttr</h1>
+	    <p style="font-size: 16px;">Explore and Share Photos</p>
+	    <form class="login-form">
+			<input type="text" class="username box" ng-model="userinfo.username" placeholder="username">
+			<input type="password" class="password box" ng-model="userinfo.password" placeholder="password" required>
+			<div>
+				<button class="login-button">Login</button>
+				<button class="signup-button">Sign Up</button>
+			</div>
+	    </form>
+	    <div class="passport-login">
+	      <a href="/auth/google"><img src="./assets/images/googleButton.png" /></a>
+	      <a href="/auth/facebook"><img src="./assets/images/facebookButton.png" /></a>
+	    </div>
+	    <div class="server-msg" ng-show="showServerMsg">
+	      <p>{{serverMsg}}</p>
+	    </div>
+	</div>
+</div>

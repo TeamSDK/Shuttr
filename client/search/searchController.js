@@ -9,6 +9,7 @@ angular.module('Shuttr.search', ['SearchServices'])
 
     SearchFactory.getAllPictures(location)
     .then(function(response) {
+      console.log("RESPONSE", response)
       $scope.pictures = response.data.photos.photo;
     })
 

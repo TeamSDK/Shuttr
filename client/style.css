@@ -19,6 +19,11 @@ img {
   position: absolute;
 }
 
+.picture-list {
+  height: 75%;
+  width: 75%;
+}
+
 /*.login-wrapper {
   margin: 0 auto;
   width: 330px;

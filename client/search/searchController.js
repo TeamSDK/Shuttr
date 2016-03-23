@@ -1,7 +1,7 @@
 angular.module('Shuttr.search', ['SearchServices'])
 
-.controller('SearchController', ['$scope', 'SearchFactory',
- function($scope, SearchFactory) {
+.controller('SearchController', ['$scope', 'SearchFactory', 
+  function($scope, SearchFactory) {
 
   $scope.pictures;
 
@@ -9,7 +9,7 @@ angular.module('Shuttr.search', ['SearchServices'])
 
     SearchFactory.getAllPictures(location)
     .then(function(response) {
-      console.log("RESPONSE", response)
+      console.log(response.data)
       $scope.pictures = response.data.photos.photo;
     })
 

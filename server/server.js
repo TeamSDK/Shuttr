@@ -29,7 +29,8 @@ app.get('/api/photos/:photoId', function (req, ourResponse, next) {
   // set options
   var options = {
     // append the user's handle to the url
-    url: 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=' + FLICKR_API_KEY + '&text=' + req.params.photoId + '&per_page=10&page=1&format=json&nojsoncallback=1'
+    url: 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=' 
+    + FLICKR_API_KEY + '&text=' + req.params.photoId + '&per_page=20&page=1&format=json&nojsoncallback=1'
   };
 
   // Send a get request to twitter, notice that the response that we send in the callback is the response from the outer-function passed in through closure.

@@ -1,9 +1,14 @@
-angular.module('Shuttr.search', ['SearchServices'])
+angular.module('Shuttr.search', ['SearchServices', 'infinite-scroll'])
 
-.controller('SearchController', ['$scope', 'SearchFactory', 
-  function($scope, SearchFactory) {
+.controller('SearchController', ['$scope', 'SearchFactory', 'Flickr',
+  function($scope, SearchFactory, Flickr) {
 
-  $scope.pictures;
+
+  $scope.flickr = new Flickr();
+
+  $scope.next_page = null;
+  var in_progress = true;
+  $scope.location = '';
 
   $scope.getPictures = function(location) {
 
@@ -13,6 +18,14 @@ angular.module('Shuttr.search', ['SearchServices'])
       $scope.pictures = response.data.photos.photo;
     })
 
+    console.log("Scorlling apparently");
+    console.log($scope.pictures)
+
   }
+
+  var height = $('row').height();
+  console.log(height);
+
+
 
 }])

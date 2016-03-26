@@ -6,17 +6,17 @@
 	    <form class="login-form">
 			<input type="text" class="username box" ng-model="userinfo.username" placeholder="username">
 			<input type="password" class="password box" ng-model="userinfo.password" placeholder="password" required>
-			<div>
-				<button class="login-button">Login</button>
-				<button class="signup-button">Sign Up</button>
-			</div>
+			<button class="login-button" ng-hide="loginState">Login</button>
+			<button class="login-button" ng-show="loginState">Sign Up</button>
 	    </form>
+	    <div class="server-msg" ng-show="showServerMsg">
+	      <p>{{serverMsg}}</p>
+	    </div>
+		<a href="#" ng-click="toggleLoginState()" ng-hide="loginState">First time? Sign up!</a>
+		<a href="#" ng-click="toggleLoginState()" ng-show="loginState">Already a member? Login!</a>
 	    <div class="passport-login">
 	      <a href="/auth/google"><img src="./assets/images/googleButton.png" /></a>
 	      <a href="/auth/facebook"><img src="./assets/images/facebookButton.png" /></a>
-	    </div>
-	    <div class="server-msg" ng-show="showServerMsg">
-	      <p>{{serverMsg}}</p>
 	    </div>
 	</div>
 </div>

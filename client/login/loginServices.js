@@ -10,5 +10,19 @@ angular.module('LoginServices', [])
       });
   };
 
+  loginServices.signin = function(info) {
+    return $http.post('/auth/signin', info)
+      .then(function(response){
+        console.log("RESPONSE", response);
+      });
+  };
+
+  loginServices.signup = function(info) {
+    return $http.post('/auth/signup', info)
+      .then(function(response){
+        console.log('RESPONSE', response);
+      });
+  };
+
   return loginServices;
 }]);

@@ -1,16 +1,18 @@
 <div>
-  <br>
-  <br>
-  <form ng-submit="getPictures(location)">
-    <input type="text" ng-model="location" placeholder="Enter a location">
-    <button type="submit" class="btn btn-primary">Search</button>
-  </form>
+  <div class="search-bar-box">
+    <form ng-submit="flickr.nextPage(location)">
+      <input class="search-bar" type="text" ng-model="location" placeholder="Enter a location">
+      <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+</div>
 
-<div class="row">
-  <div class="col-xs-6 col-md-4" ng-repeat="picture in pictures">
-    <p> {{ picture.title }} </p>
-    <img class="picture-list" ng-src="https://farm{{ picture.farm }}.staticflickr.com/{{ picture.server }}/{{ picture.id }}_{{ picture.secret }}.jpg" />
+<div class="container-fluid" infinite-scroll='flickr.nextPage(location)' infinite-scroll-disabled='flickr.busy' infinite-scroll-distance='1'>
+  <div class="row">
+    <div class="col-xs-6 col-md-2" ng-repeat="picture in flickr.items">
+      <img class="picture-list" ng-src="https://farm{{ picture.farm }}.staticflickr.com/{{ picture.server }}/{{ picture.id }}_{{ picture.secret }}.jpg" />
+    </div>
   </div>
+  <div ng-show='flickr.busy'>Loading data...</div>
 </div>
 
 </div>

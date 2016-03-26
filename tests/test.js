@@ -12,12 +12,12 @@ describe('Shuttr', function() {
   describe('SearchController', function() {
 
     var createController = function() {
-      return $controller('SearchController', { $scope: $scope });
+      return $controller('LoginController', { $scope: $scope });
     };
     
     it('should have text SF', function() {
       var controller = createController();
-      expect($scope.location.text).toEqual('San Francisco');
+      expect($scope.imageFetched).toEqual(false);
     });
   });
 });

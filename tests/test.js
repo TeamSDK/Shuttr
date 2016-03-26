@@ -14,7 +14,7 @@ describe('Shuttr', function() {
     var createController = function() {
       return $controller('LoginController', { $scope: $scope });
     };
-    
+
     it('should have text SF', function() {
       var controller = createController();
       expect($scope.imageFetched).toEqual(false);

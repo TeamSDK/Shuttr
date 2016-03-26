@@ -17,7 +17,7 @@ describe('Shuttr', function() {
     
     it('should have text SF', function() {
       var controller = createController();
-      expect($scope.location.text).toEqual('San Francisco');
+      expect($scope.location).toEqual('San Francisco');
     });
   });
 });

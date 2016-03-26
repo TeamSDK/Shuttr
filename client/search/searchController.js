@@ -4,7 +4,7 @@ angular.module('Shuttr.search', ['SearchServices'])
   function($scope, SearchFactory) {
 
   $scope.pictures;
-
+  $scope.location = "San Francisco";
   $scope.getPictures = function(location) {
 
     SearchFactory.getAllPictures(location)

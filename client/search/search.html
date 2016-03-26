@@ -12,6 +12,7 @@
       <img class="picture-list" ng-src="https://farm{{ picture.farm }}.staticflickr.com/{{ picture.server }}/{{ picture.id }}_{{ picture.secret }}.jpg" />
     </div>
   </div>
+  <div ng-show='flickr.busy'>Loading data...</div>
 </div>
 
 </div>

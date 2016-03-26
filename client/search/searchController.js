@@ -6,25 +6,11 @@ angular.module('Shuttr.search', ['SearchServices', 'infinite-scroll'])
 
   $scope.flickr = new Flickr();
 
-  $scope.next_page = null;
-  var in_progress = true;
-  $scope.location = '';
+  if (!$scope.images) {
 
-  $scope.getPictures = function(location) {
-
-    SearchFactory.getAllPictures(location)
-    .then(function(response) {
-      console.log(response.data)
-      $scope.pictures = response.data.photos.photo;
-    })
-
-    console.log("Scorlling apparently");
-    console.log($scope.pictures)
-
+  } else {
+    $scope.images = Flickr.items
   }
-
-  var height = $('row').height();
-  console.log(height);
 
 
 

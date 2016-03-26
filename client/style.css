@@ -20,8 +20,24 @@ img {
 }
 
 .picture-list {
-  height: 75%;
-  width: 75%;
+  height: 100%;
+  width: 100%;
+  padding: 0 1px 1px 0 !important;
+  margin: 0 !important;
+}
+
+.search-bar-box {
+  width: auto;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  margin-left: 20px;
+  margin-top: 10px;
+  width: 400px;
+  border: 2px inset;
+  height: 35px;
 }
 
 /*.login-wrapper {
@@ -174,7 +190,7 @@ img {
     background-color: #222;
     border-top: 1px solid #080808;
     color: white;
-    position: absolute;
+    position: relative;
     width: 100%;
     text-align: right;
     top: 75em;

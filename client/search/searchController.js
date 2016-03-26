@@ -1,18 +1,17 @@
-angular.module('Shuttr.search', ['SearchServices'])
+angular.module('Shuttr.search', ['SearchServices', 'infinite-scroll'])
 
-.controller('SearchController', ['$scope', 'SearchFactory', 
-  function($scope, SearchFactory) {
+.controller('SearchController', ['$scope', 'SearchFactory', 'Flickr',
+  function($scope, SearchFactory, Flickr) {
 
-  $scope.pictures;
-  $scope.location = "San Francisco";
-  $scope.getPictures = function(location) {
 
-    SearchFactory.getAllPictures(location)
-    .then(function(response) {
-      console.log(response.data)
-      $scope.pictures = response.data.photos.photo;
-    })
+  $scope.flickr = new Flickr();
 
+  if (!$scope.images) {
+
+  } else {
+    $scope.images = Flickr.items
   }
+
+
 
 }])

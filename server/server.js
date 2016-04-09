@@ -13,7 +13,7 @@ var port = process.env.PORT || 3000;
 
 // Middleware Configuration 
 
-app.use(express.static(__dirname + '/../client'));                 // set the static files location /public/img will be /img for users
+app.use(express.static(__dirname + '/../client'));              // set the static files location /public/img will be /img for users
 app.use(morgan('dev'));                                         // log every request to the console
 app.use(bodyParser.urlencoded({'extended':'true'}));            // parse application/x-www-form-urlencoded
 app.use(bodyParser.json());                                     // parse application/json
@@ -26,22 +26,18 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse applica
 
 app.get('/api/photos/:photoId', function (req, ourResponse, next) {
   
-  // set options
   var options = {
     // append the user's handle to the url
     url: 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=' 
     + FLICKR_API_KEY + '&text=' + req.params.photoId + '&per_page=20&page=1&format=json&nojsoncallback=1'
   };
 
-  // Send a get request to twitter, notice that the response that we send in the callback is the response from the outer-function passed in through closure.
   request(options, function (err, responseFromFlickr, body) {
-    // console.log(JSON.parse(body));
     ourResponse.status(200).send(JSON.parse(body));
   });
 });
 
 
-// listen (start app with node server.js) ======================================
 app.listen(port);
 console.log("App listening on port:" + port);
 

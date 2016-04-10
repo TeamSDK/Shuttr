@@ -1,7 +1,8 @@
 angular.module("Shuttr", ['ui.router',
   'Shuttr.main',
   'Shuttr.search',
-  'Shuttr.login'
+  'Shuttr.login',
+  'Shuttr.contact'
 ])
 
 .config(['$stateProvider','$urlRouterProvider', 
@@ -25,6 +26,12 @@ angular.module("Shuttr", ['ui.router',
       url: '/login',
       templateUrl: 'login/login.html',
       controller: 'LoginController'
+    })
+    
+    .state('contact', {
+      url: '/contact',
+      templateUrl: 'contact/contact.html',
+      controller: 'ContactController'
     })
     
 }])

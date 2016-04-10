@@ -1,55 +1,21 @@
-angular.module('SearchServices', [])
+angular.module('PictureServices', [])
 
-.factory('SearchFactory', ['$http', function($http){
+.factory('PicturesFactory', ['$http', function($http){
 
-  var searchPictures = {};
+  var pictures = {};
+  pictures.items = [];
 
-  searchPictures.getAllPictures = function(location) {
+  pictures.getAllPictures = function(location) {
     return $http({
       method: 'GET',
       url: '/api/photos/' + location
     })
     .then(function(response) {
-      return response;
+      pictures.items = response.data.photos.photo;
+      return pictures;
     })
   }
-
-  return searchPictures;
-
-}])
-
-.factory('Flickr', ['$http', function($http){
-
-  var Flickr = function() {
-    this.items = [];
-    this.busy = false;
-    this.after = '';
-  };
-
-  Flickr.prototype.nextPage = function(location) {
-    if (this.busy) return;
-    this.busy = true;
-    var currentLocation = location;
-
-    $http({
-      method: 'GET',
-      url: '/api/photos/' + location
-    })
-    .then(function(response) {
-
-      
-        
-
-        var items = response.data.photos.photo;
-        for (var i = 0; i < items.length; i++) {
-          this.items.push(items[i]);
-        }
-
-        this.busy = false;
-      
-    }.bind(this));
-  }
-
-  return Flickr;
+  
+  return pictures;
 
 }])

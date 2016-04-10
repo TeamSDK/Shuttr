@@ -24,6 +24,11 @@ img {
   width: 100%;
   padding: 0 1px 1px 0 !important;
   margin: 0 !important;
+  transition all 1s ease-in-out;
+}
+
+.picture-list:hover{
+  transform: scale(1.5);
 }
 
 .search-bar-box {
@@ -38,6 +43,14 @@ img {
   width: 400px;
   border: 2px inset;
   height: 35px;
+}
+
+.contact-container {
+  margin-top: 40px;
+}
+
+.selected {
+  background-color: #FAFAD2;
 }
 
 /*.login-wrapper {

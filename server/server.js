@@ -29,7 +29,7 @@ app.get('/api/photos/:photoId', function (req, ourResponse, next) {
   var options = {
     // append the user's handle to the url
     url: 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=' 
-    + FLICKR_API_KEY + '&text=' + req.params.photoId + '&per_page=20&page=1&format=json&nojsoncallback=1'
+    + FLICKR_API_KEY + '&text=' + req.params.photoId + '&per_page=100&page=1&format=json&nojsoncallback=1'
   };
 
   request(options, function (err, responseFromFlickr, body) {
